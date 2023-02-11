@@ -8,19 +8,23 @@ The psuedocode for this algorithm can be written as followed:
 Time complexity:
 O(n!)
 
-Please do not use this algorithm to do anything useful
+Please do not use this algorithm to do anything useful.
 '''
 
 import random
 
-# to be sorted
-arr = [7, 5, 3, 2, 1, 4, 6]
+
+arr = [1, 2, 3, 4, 5, 6, 7]
+random.shuffle(arr)
+# the array now needs to be sorted
 
 # sorted arr
 sorted_arr = [i+1 for i in range(len(arr))]
 
+
 # counter to see how many shuffles it took (this isn't part of the sorting alg but you can get a sense of how inefficient this algorithm is)
 counter = 0
+
 
 while arr != sorted_arr:
     random.shuffle(arr)
@@ -28,4 +32,5 @@ while arr != sorted_arr:
 
 
 print("\nArray was sorted in", counter, "number of random shuffles.\n")
+print(arr)
 

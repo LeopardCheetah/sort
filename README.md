@@ -11,5 +11,3 @@ Sorts to implement:
 - Tree Sort
 - Radix Sort
 - Counting Sort
-- Bubble Sort
-- Bogosort
