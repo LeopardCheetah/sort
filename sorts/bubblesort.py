@@ -14,28 +14,31 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 random.shuffle(arr)
 
 
-items_sorted = 0
-swapped = True
+def bubble_sort(arr):
+    items_sorted = 0
+    swapped = True
 
 
-# again, another counter
-swaps_needed = 0
+    # again, another counter
+    swaps_needed = 0
 
 
-# keep on taking the 0th index item and start swapping it with all the other indices
-while swapped:
-    swapped = False
-    for index in range(len(arr) - items_sorted - 1):
-        # compare two indices and swap them if necessary
+    # keep on taking the 0th index item and start swapping it with all the other indices
+    while swapped:
+        swapped = False
+        for index in range(len(arr) - items_sorted - 1):
+            # compare two indices and swap them if necessary
 
-        if arr[index + 1] < arr[index]:
-            # swap since the index before is bigger
-            swapped = True
-            arr[index], arr[index + 1] = arr[index + 1], arr[index]
-            swaps_needed += 1
+            if arr[index + 1] < arr[index]:
+                # swap since the index before is bigger
+                swapped = True
+                arr[index], arr[index + 1] = arr[index + 1], arr[index]
+                swaps_needed += 1
+        
+        items_sorted += 1
+        # this line technically isn't need but it def speeds up the algorithm by a factor of 2 (potentially)
     
-    items_sorted += 1
-    # this line technically isn't need but it def speeds up the algorithm by a factor of 2 (potentially)
+    return arr
 
 print()
 print(arr)
