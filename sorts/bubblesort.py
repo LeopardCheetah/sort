@@ -1,5 +1,10 @@
 '''
-I'll do an explanation for bubble sort later
+Bubble sort is usually someone's first algorithm (not mine) that they learn when they start sorting.
+Essentially, given a list, the algorithm repeatedly swaps lower values with higher values until the items are sorted.
+E.g.
+
+[..., 8, 7, ....]
+In the above example, the algorithm would swap the numbers 7 and 8, to make the list one step (swap?) closer to being sorted.
 
 This sorting algorithm runs in O(n^2) time.
 Analysis for the time complexity of the algorithm is at the bottom.
