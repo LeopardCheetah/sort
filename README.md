@@ -7,6 +7,7 @@ Sorted implemented:
 - Bogosort
 - Bubble Sort
 - Insertion Sort
+- Counting Sort (In progress)
    
     
 Sorts to implement:   
@@ -16,4 +17,3 @@ Sorts to implement:
 - Heapsort
 - Tree Sort
 - Radix Sort
-- Counting Sort
