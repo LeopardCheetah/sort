@@ -18,7 +18,7 @@
 
 
 # if it should be manually user-inputted -- use the config section (right below this)
-# if you need a fundamentally different list (aka maybe all odds or something) -
+# if you need a fundamentally different list (aka maybe all odd numbers or something) -
 # make a new function definition with a good and descriptive name
 
 # otherwise don't touch!
