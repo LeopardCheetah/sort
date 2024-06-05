@@ -78,20 +78,25 @@ import random
 import copy # deep copy -- nice that this is built into python
 
 
-
-
-# see commented code
 def generate_random_list(bound, length):
     random_list = [random.randint(1, bound) for a in range(length)]
 
-    if len(set(random_list)) == len(random_list):
-        return random_list # yay
+    return random_list
 
-    # hmm we could tweak the array
-    # we could recursively call ourselves 
-    # sure lets cause a stack overflow today
 
-    return generate_random_list(bound, length) 
+# see commented code
+def generate_random_unique_list(bound, length):
+    # lol saved my previous comments with a commit
+
+    test_list = [1, 1] # basic non-unique list
+    while len(test_list) != len(set(test_list)):
+        test_list = generate_random_list(bound, length)
+
+    return test_list
+
+    # note that this is terrible code practice probably but quickest way to do it
+    # also inputs are small rn
+
 
 
 
@@ -99,8 +104,9 @@ def generate_random_list(bound, length):
 
 tests_passed = 0
 
+
 tests = 1000
-max_length = 1000
+max_length = 1000 # for uniqueness sake rn, max_length cannot be greater than val_upper_bound because otherwise pigeonhole and then infinite loop
 val_upper_bound = 1000
 
 
@@ -117,7 +123,7 @@ for i in range(tests):
     # random_list = [random.randint(1, val_upper_bound) for a in range(test_len)] 
 
     # v2 just define a new thing lol
-    random_list = generate_random_list(val_upper_bound, test_len)
+    random_list = generate_random_unique_list(val_upper_bound, test_len)
 
 
 
@@ -146,6 +152,7 @@ for i in range(tests):
 
     if correctness:
         tests_passed += 1
+        print('Tests passed:', tests_passed)
         continue
 
     # incorrect!!
