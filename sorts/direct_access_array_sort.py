@@ -98,6 +98,23 @@ def generate_random_unique_list(bound, length):
     # also inputs are small rn
 
 
+    # ok so with this while loop
+    # assuming worst case scenario
+    # there are 1000! lists with len 1000 that are unique
+    # there are 1000^1000 lists with len 1000 (0 < value at each index < 1001)
+
+    # so 1000!/1000^1000
+    # = 4*10^(-433)
+
+    # even if random loops through every list and stuff
+    # (doing some calculations for fun)
+    
+    # lets say generating a list takes 10 microseconds (10^(-5) seconds)
+    # and assume that every generating 10^400 lists we finally get a usable one (this isnt how probability works but who cares)
+    # (actually theres a 1/e probability that it works (lim n -> inf (1-1/n)^n) = 1/e) -- not sure how fast it converges)
+    # then it would take fucking forever for this shit to finish
+
+
 
 
 
