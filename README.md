@@ -1,19 +1,7 @@
 # Sort 
 
-This repository is written in python and is a collection of sorts I have implemented. This is a personal project for me, so I can improve my sorting.   
+~~This repository is written in python and is a collection of sorts I have implemented. This is a personal project for me, so I can improve my sorting.~~   
     
-Sorted implemented:   
-    
-- Bogosort
-- Bubble Sort
-- Insertion Sort
-- Counting Sort (In progress)
-   
-    
-Sorts to implement:   
-   
-- Merge Sort
-- Quick Sort
-- Heapsort
-- Tree Sort
-- Radix Sort
+
+
+Revived 6/4/2024
