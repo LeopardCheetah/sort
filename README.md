@@ -4,4 +4,22 @@
     
 
 
-Revived 6/4/2024
+Revived 6/4/2024   
+See 6.006 mit ocw for some details
+
+
+
+todo:
+- counting
+- radix
+- hashing 
+- merge
+- heap
+- quick
+
+other:
+- timsort??? 
+- cubesort (when i get too good at programming)
+
+even later:
+- graphs
