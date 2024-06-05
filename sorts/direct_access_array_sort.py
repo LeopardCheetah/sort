@@ -56,5 +56,126 @@ def direct_access_array_sort(arr):
     return final_ls 
 
 
-print(direct_access_array_sort([5, 2, 4, 7, 9, 13, 59]))
+
+
+
+
+
+
+
+#######################################################
+#######################################################
+#######################################################
+#######################################################
+
+
+
+
+
+# time to make some scuffed unit tests
+
+import random 
+import copy # deep copy -- nice that this is built into python
+
+
+
+
+# see commented code
+def generate_random_list(bound, length):
+    random_list = [random.randint(1, bound) for a in range(length)]
+
+    if len(set(random_list)) == len(random_list):
+        return random_list # yay
+
+    # hmm we could tweak the array
+    # we could recursively call ourselves 
+    # sure lets cause a stack overflow today
+
+    return generate_random_list(bound, length) 
+
+
+
+
+
+tests_passed = 0
+
+tests = 1000
+max_length = 1000
+val_upper_bound = 1000
+
+
+for i in range(tests):
+    # generate random arr of random length
+    # or ok fine the length is a variable
+
+    # hey wait this is a good time to use try error!!!!
+    test_len = random.randint(1, max_length)
+
+
+
+    # v1 -- i forgot that values have to be unique
+    # random_list = [random.randint(1, val_upper_bound) for a in range(test_len)] 
+
+    # v2 just define a new thing lol
+    random_list = generate_random_list(val_upper_bound, test_len)
+
+
+
+    answer = copy.deepcopy(random_list)
+
+    answer.sort() 
+    # we now have a verification answer
+
+
+    response = []
+    correctness = False
+
+    # hehe try except
+    try:
+        response = direct_access_array_sort(random_list)
+        
+        # ok so til that the == operator in python will compare the value (at least in lists) even for a deepcopy so
+        correctness = (response == answer)
+    except:
+        print()
+        print('Your sort hit some sort of error with input:')
+        print(random_list)
+        print()
+        break # leave the loop
+    
+
+    if correctness:
+        tests_passed += 1
+        continue
+
+    # incorrect!!
+
+    print()
+    print('Your sort is incorrect :(')
+    print(f'On test case #{i + 1} your algorithm failed.')
+    print()
+    print('Test Array:')
+    print(random_list)
+    print()
+    print('Expected Answer:')
+    print(answer)
+    print()
+    print('Your answer:')
+    print(response)
+    print()
+    break # just leave the loop
+
+
+
+
+
+
+
+
+
+if tests_passed == tests:
+    print('Yay your sort sorts correctly!')
+    print(f'{tests_passed}/{tests} tests passed successfully.')
+    print()
+
     
